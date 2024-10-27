@@ -1,6 +1,6 @@
-import { Button } from "@acme/ui/button";
-import { ScrollArea } from "@acme/ui/scroll-area";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@acme/ui/tooltip";
+import { Button } from "../button";
+import { ScrollArea } from "../scroll-area";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip";
 import { IconNote, IconNoteOff } from "@tabler/icons-react";
 import { useId, useState } from "react";
 
