@@ -27,7 +27,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
   },
   "include": [
     ".eslintrc.cjs",
