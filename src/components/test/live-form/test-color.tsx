@@ -1,4 +1,4 @@
-import LiveFormColor from "@acme/live-form/color";
+import LiveFormColor from "@/components/live-form/color";
 import { IconBug } from "@tabler/icons-react";
 
 function TestColor(

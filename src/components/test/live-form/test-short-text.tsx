@@ -1,4 +1,4 @@
-import LiveFormShortText from "@acme/live-form/short-text";
+import LiveFormShortText from "@/components/live-form/short-text";
 import { IconBug } from "@tabler/icons-react";
 
 function TestShortText(

@@ -1,4 +1,4 @@
-import LiveFormDebugInfo from "@acme/live-form/debug-info";
+import LiveFormDebugInfo from "@/components/live-form/debug-info";
 
 function TestDebugInfo(
   props: Record<string, any> & { name: string | number; label?: any },

@@ -1,4 +1,4 @@
-import LiveFormSwitch from "@acme/live-form/switch";
+import LiveFormSwitch from "@/components/live-form/switch";
 
 function TestSwitch(
   props: Record<string, any> & { name: string | number; label?: any },

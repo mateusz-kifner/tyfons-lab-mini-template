@@ -1,4 +1,4 @@
-import LiveFormText from "@acme/live-form/text";
+import LiveFormText from "@/components/live-form/text";
 import { IconBug } from "@tabler/icons-react";
 
 function TestText(

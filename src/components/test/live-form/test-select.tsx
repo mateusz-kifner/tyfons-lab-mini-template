@@ -1,4 +1,4 @@
-import LiveFormSelect from "@acme/live-form/select";
+import LiveFormSelect from "@/components/live-form/select";
 
 function TestSelect(
   props: Record<string, any> & { name: string | number; label?: any },

@@ -1,4 +1,4 @@
-import LiveFormDate from "@acme/live-form/date";
+import LiveFormDate from "@/components/live-form/date";
 import { IconBug } from "@tabler/icons-react";
 
 function TestDate(

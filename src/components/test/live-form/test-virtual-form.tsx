@@ -1,4 +1,4 @@
-import LiveForm from "@acme/live-form/form";
+import LiveForm from "@/components/live-form/form";
 import { useState, type ReactNode } from "react";
 import { toast } from "sonner";
 

@@ -1,4 +1,4 @@
-import LiveFormJSON from "@acme/live-form/json";
+import LiveFormJSON from "@/components/live-form/json";
 
 function TestJSON(
   props: Record<string, any> & { name: string | number; label?: any },
