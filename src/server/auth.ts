@@ -1,12 +1,10 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import {
-  getServerSession,
+import NextAuth, {
+  NextAuthConfig,
   type DefaultSession,
-  type NextAuthOptions,
+  Session as NextAuthSession,
 } from "next-auth";
-import { type Adapter } from "next-auth/adapters";
-import DiscordProvider from "next-auth/providers/discord";
-
+import Discord from "next-auth/providers/discord";
 import { env } from "@/env";
 import { db } from "@/server/db";
 import {
@@ -15,6 +13,8 @@ import {
   users,
   verificationTokens,
 } from "@/server/db/schema";
+
+export type { Session } from "next-auth";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -37,47 +37,69 @@ declare module "next-auth" {
   // }
 }
 
+
+const adapter = DrizzleAdapter(db, {
+  usersTable: users,
+  accountsTable: accounts,
+  sessionsTable: sessions,
+  verificationTokensTable: verificationTokens,
+});
+
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
  *
  * @see https://next-auth.js.org/configuration/options
  */
-export const authOptions: NextAuthOptions = {
+export const authOptions = {
+  adapter,
+  // // In development, we need to skip checks to allow Expo to work
+  // ...(!isSecureContext
+  //   ? {
+  //       skipCSRFCheck: skipCSRFCheck,
+  //       trustHost: true,
+  //     }
+  //   : {}),
+  secret: env.AUTH_SECRET,
+  providers: [Discord],
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
+    session: (opts) => {
+      if (!("user" in opts))
+        throw new Error("unreachable with session strategy");
+
+      return {
+        ...opts.session,
+        user: {
+          ...opts.session.user,
+          id: opts.user.id,
+        },
+      };
+    },
   },
-  adapter: DrizzleAdapter(db, {
-    usersTable: users,
-    accountsTable: accounts,
-    sessionsTable: sessions,
-    verificationTokensTable: verificationTokens,
-  }) as Adapter,
-  providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
-    }),
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
-  ],
+} satisfies NextAuthConfig
+
+
+export const validateToken = async (
+  token: string,
+): Promise<NextAuthSession | null> => {
+  const sessionToken = token.slice("Bearer ".length);
+  const session = await adapter.getSessionAndUser?.(sessionToken);
+  return session
+    ? {
+        user: {
+          ...session.user,
+        },
+        expires: session.session.expires.toISOString(),
+      }
+    : null;
 };
 
-/**
- * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
- *
- * @see https://next-auth.js.org/configuration/nextjs
- */
-export const getServerAuthSession = () => getServerSession(authOptions);
+export const invalidateSessionToken = async (token: string) => {
+  const sessionToken = token.slice("Bearer ".length);
+  await adapter.deleteSession?.(sessionToken);
+};
+
+
+
+const { handlers, auth, signIn, signOut } = NextAuth(authOptions);
+
+export { handlers, auth, signIn, signOut };
