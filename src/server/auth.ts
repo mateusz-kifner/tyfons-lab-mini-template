@@ -13,6 +13,7 @@ import {
   users,
   verificationTokens,
 } from "@/server/db/schema";
+import Nodemailer from "next-auth/providers/nodemailer"
 
 export type { Session } from "next-auth";
 
@@ -60,7 +61,17 @@ export const authOptions = {
   //     }
   //   : {}),
   secret: env.AUTH_SECRET,
-  providers: [Discord],
+  providers: [Discord, Nodemailer({
+    server: {
+      host: env.EMAIL_SERVER_HOST,
+      port: env.EMAIL_SERVER_PORT,
+      auth: {
+        user: env.EMAIL_SERVER_USER,
+        pass: env.EMAIL_SERVER_PASSWORD,
+      },
+    },
+    from: env.EMAIL_FROM,
+  }),],
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))
