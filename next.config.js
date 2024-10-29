@@ -5,6 +5,14 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+	/** We already do linting and typechecking as separate tasks in CI */
+	eslint: { ignoreDuringBuilds: true },
+	typescript: { ignoreBuildErrors: true },
+	i18n: {
+		locales: ["pl", "en"],
+		defaultLocale: "pl",
+	},
+};
 
 export default config;
