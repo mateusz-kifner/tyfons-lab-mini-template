@@ -10,5 +10,18 @@
 		"tanstack",
 		"tinycolor",
 		"vaul"
+	],
+	"typescript.preferences.autoImportFileExcludePatterns": [
+		"@radix-ui/*",
+		"drizzle-orm/sqlite-core/*",
+		"drizzle-orm/mysql-core/*"
+	],
+	"javascript.suggest.classMemberSnippets.enabled": false,
+	"typescript.suggest.classMemberSnippets.enabled": false,
+	"typescript.suggest.objectLiteralMethodSnippets.enabled": false,
+	"tailwindCSS.experimental.classRegex": [
+		["cva([^;]*);", "'([^']*)'"],
+		["cva([^;]*);", "\"([^\"]*)\""],
+		["cva([^;]*);", "\\`([^\\`]*)\\`"]
 	]
 }
