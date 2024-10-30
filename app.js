@@ -1,9 +1,6 @@
+// @ts-nocheck
 // start app via Phusion Passenger
-const path = require("node:path");
 
-const nextPath = path.join(__dirname, "node_modules", ".bin", "next");
+const nextStart = require("next/dist/cli/next-start");
 
-process.argv.length = 1;
-process.argv.push(nextPath, "start");
-
-require(nextPath);
+nextStart.nextStart({});
