@@ -143,6 +143,9 @@ importers:
       drizzle-orm:
         specifier: 0.36.0
         version: 0.36.0(@libsql/client-wasm@0.14.0)(@types/react@18.3.12)(postgres@3.4.5)(react@19.0.0-rc-fb9a90fa48-20240614)
+      drizzle-zod:
+        specifier: ^0.5.1
+        version: 0.5.1(drizzle-orm@0.36.0(@libsql/client-wasm@0.14.0)(@types/react@18.3.12)(postgres@3.4.5)(react@19.0.0-rc-fb9a90fa48-20240614))(zod@3.23.8)
       embla-carousel-react:
         specifier: 8.3.1
         version: 8.3.1(react@19.0.0-rc-fb9a90fa48-20240614)
@@ -2287,6 +2290,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-zod@0.5.1:
+    resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
+    peerDependencies:
+      drizzle-orm: '>=0.23.13'
+      zod: '*'
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -5439,6 +5448,11 @@ snapshots:
       '@types/react': 18.3.12
       postgres: 3.4.5
       react: 19.0.0-rc-fb9a90fa48-20240614
+
+  drizzle-zod@0.5.1(drizzle-orm@0.36.0(@libsql/client-wasm@0.14.0)(@types/react@18.3.12)(postgres@3.4.5)(react@19.0.0-rc-fb9a90fa48-20240614))(zod@3.23.8):
+    dependencies:
+      drizzle-orm: 0.36.0(@libsql/client-wasm@0.14.0)(@types/react@18.3.12)(postgres@3.4.5)(react@19.0.0-rc-fb9a90fa48-20240614)
+      zod: 3.23.8
 
   eastasianwidth@0.2.0: {}
 

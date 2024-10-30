@@ -2,7 +2,8 @@ import { users } from "./schema";
 import { eq, inArray, sql } from "drizzle-orm";
 import type { UpdatedUser, User } from "./validator";
 import { db } from "@/server/db";
-import type { Err, MetadataType } from "@/server/db/types";
+import type { MetadataType } from "@/server/db/types";
+import type { Err } from "@/server/types/Err";
 
 // TODO: make this compatible with lucia auth
 

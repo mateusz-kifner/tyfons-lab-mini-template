@@ -14,14 +14,3 @@ export type MetadataType = {
 	updatedAt?: Date;
 	updatedById?: string;
 };
-
-export interface Err {
-	success: false;
-	error: string;
-	errorObj?: Error;
-}
-
-export interface OK {
-	success: true;
-	message?: string;
-}
