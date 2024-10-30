@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
 
-const { env } = await import("../../env.js");
+const { env } = await import("../../env.mjs");
 
 async function main() {
 	console.log("⏳ Running migrations...");
