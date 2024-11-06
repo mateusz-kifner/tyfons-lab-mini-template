@@ -15,174 +15,204 @@ import { ThemeToggle } from "@/components/ui/theme";
 import dynamic from "next/dynamic";
 
 const TestAccordion = dynamic(
-	() => import("@/components/test/shadcn/test-accordion"),
+	() => import("@/components/test-pages/shadcn/test-accordion"),
 	{ ssr: false },
 );
-const TestAlert = dynamic(() => import("@/components/test/shadcn/test-alert"), {
-	ssr: false,
-});
+const TestAlert = dynamic(
+	() => import("@/components/test-pages/shadcn/test-alert"),
+	{
+		ssr: false,
+	},
+);
 const TestAlertDialog = dynamic(
-	() => import("@/components/test/shadcn/test-alert-dialog"),
+	() => import("@/components/test-pages/shadcn/test-alert-dialog"),
 	{ ssr: false },
 );
 const TestAspectRatio = dynamic(
-	() => import("@/components/test/shadcn/test-aspect-ratio"),
+	() => import("@/components/test-pages/shadcn/test-aspect-ratio"),
 	{ ssr: false },
 );
-const TestBadge = dynamic(() => import("@/components/test/shadcn/test-badge"), {
-	ssr: false,
-});
+const TestBadge = dynamic(
+	() => import("@/components/test-pages/shadcn/test-badge"),
+	{
+		ssr: false,
+	},
+);
 const TestBreadcrumb = dynamic(
-	() => import("@/components/test/shadcn/test-breadcrumb"),
+	() => import("@/components/test-pages/shadcn/test-breadcrumb"),
 	{ ssr: false },
 );
 const TestButton = dynamic(
-	() => import("@/components/test/shadcn/test-button"),
+	() => import("@/components/test-pages/shadcn/test-button"),
 	{ ssr: false },
 );
 const TestCalendar = dynamic(
-	() => import("@/components/test/shadcn/test-calendar"),
+	() => import("@/components/test-pages/shadcn/test-calendar"),
 	{ ssr: false },
 );
 
-const TestCard = dynamic(() => import("@/components/test/shadcn/test-card"), {
-	ssr: false,
-});
+const TestCard = dynamic(
+	() => import("@/components/test-pages/shadcn/test-card"),
+	{
+		ssr: false,
+	},
+);
 const TestCarousel = dynamic(
-	() => import("@/components/test/shadcn/test-carousel"),
+	() => import("@/components/test-pages/shadcn/test-carousel"),
 	{ ssr: false },
 );
-const TestChart = dynamic(() => import("@/components/test/shadcn/test-chart"), {
-	ssr: false,
-});
+const TestChart = dynamic(
+	() => import("@/components/test-pages/shadcn/test-chart"),
+	{
+		ssr: false,
+	},
+);
 const TestCheckbox = dynamic(
-	() => import("@/components/test/shadcn/test-checkbox"),
+	() => import("@/components/test-pages/shadcn/test-checkbox"),
 	{ ssr: false },
 );
 const TestCollapsible = dynamic(
-	() => import("@/components/test/shadcn/test-collapsible"),
+	() => import("@/components/test-pages/shadcn/test-collapsible"),
 	{ ssr: false },
 );
 const TestCombobox = dynamic(
-	() => import("@/components/test/shadcn/test-combobox"),
+	() => import("@/components/test-pages/shadcn/test-combobox"),
 	{ ssr: false },
 );
 const TestCommand = dynamic(
-	() => import("@/components/test/shadcn/test-command"),
+	() => import("@/components/test-pages/shadcn/test-command"),
 	{ ssr: false },
 );
 const TestContextMenu = dynamic(
-	() => import("@/components/test/shadcn/test-context-menu"),
+	() => import("@/components/test-pages/shadcn/test-context-menu"),
 	{ ssr: false },
 );
 const TestDialog = dynamic(
-	() => import("@/components/test/shadcn/test-dialog"),
+	() => import("@/components/test-pages/shadcn/test-dialog"),
 	{ ssr: false },
 );
 const TestDrawer = dynamic(
-	() => import("@/components/test/shadcn/test-drawer"),
+	() => import("@/components/test-pages/shadcn/test-drawer"),
 	{ ssr: false },
 );
 const TestDropdownMenu = dynamic(
-	() => import("@/components/test/shadcn/test-dropdown-menu"),
+	() => import("@/components/test-pages/shadcn/test-dropdown-menu"),
 	{ ssr: false },
 );
-const TestForm = dynamic(() => import("@/components/test/shadcn/test-form"), {
-	ssr: false,
-});
+const TestForm = dynamic(
+	() => import("@/components/test-pages/shadcn/test-form"),
+	{
+		ssr: false,
+	},
+);
 const TestHoverCard = dynamic(
-	() => import("@/components/test/shadcn/test-hover-card"),
+	() => import("@/components/test-pages/shadcn/test-hover-card"),
 	{ ssr: false },
 );
 const TestInputOTP = dynamic(
-	() => import("@/components/test/shadcn/test-input-otp"),
+	() => import("@/components/test-pages/shadcn/test-input-otp"),
 	{ ssr: false },
 );
-const TestInput = dynamic(() => import("@/components/test/shadcn/test-input"), {
-	ssr: false,
-});
-const TestLabel = dynamic(() => import("@/components/test/shadcn/test-label"), {
-	ssr: false,
-});
+const TestInput = dynamic(
+	() => import("@/components/test-pages/shadcn/test-input"),
+	{
+		ssr: false,
+	},
+);
+const TestLabel = dynamic(
+	() => import("@/components/test-pages/shadcn/test-label"),
+	{
+		ssr: false,
+	},
+);
 const TestMenubar = dynamic(
-	() => import("@/components/test/shadcn/test-menubar"),
+	() => import("@/components/test-pages/shadcn/test-menubar"),
 	{ ssr: false },
 );
 const TestNavigationMenu = dynamic(
-	() => import("@/components/test/shadcn/test-navigation-menu"),
+	() => import("@/components/test-pages/shadcn/test-navigation-menu"),
 	{ ssr: false },
 );
 const TestPagination = dynamic(
-	() => import("@/components/test/shadcn/test-pagination"),
+	() => import("@/components/test-pages/shadcn/test-pagination"),
 	{ ssr: false },
 );
 const TestPaginationPrimitive = dynamic(
-	() => import("@/components/test/shadcn/test-pagination-primitive"),
+	() => import("@/components/test-pages/shadcn/test-pagination-primitive"),
 	{ ssr: false },
 );
 const TestPopover = dynamic(
-	() => import("@/components/test/shadcn/test-popover"),
+	() => import("@/components/test-pages/shadcn/test-popover"),
 	{ ssr: false },
 );
 const TestProgress = dynamic(
-	() => import("@/components/test/shadcn/test-progress"),
+	() => import("@/components/test-pages/shadcn/test-progress"),
 	{ ssr: false },
 );
 const TestRatioGroup = dynamic(
-	() => import("@/components/test/shadcn/test-ratio-group"),
+	() => import("@/components/test-pages/shadcn/test-ratio-group"),
 	{ ssr: false },
 );
 const TestResizable = dynamic(
-	() => import("@/components/test/shadcn/test-resizable"),
+	() => import("@/components/test-pages/shadcn/test-resizable"),
 	{ ssr: false },
 );
 const TestScrollArea = dynamic(
-	() => import("@/components/test/shadcn/test-scroll-area"),
+	() => import("@/components/test-pages/shadcn/test-scroll-area"),
 	{ ssr: false },
 );
 const TestSelect = dynamic(
-	() => import("@/components/test/shadcn/test-select"),
+	() => import("@/components/test-pages/shadcn/test-select"),
 	{ ssr: false },
 );
 const TestSeparator = dynamic(
-	() => import("@/components/test/shadcn/test-separator"),
+	() => import("@/components/test-pages/shadcn/test-separator"),
 	{ ssr: false },
 );
-const TestSheet = dynamic(() => import("@/components/test/shadcn/test-sheet"), {
-	ssr: false,
-});
+const TestSheet = dynamic(
+	() => import("@/components/test-pages/shadcn/test-sheet"),
+	{
+		ssr: false,
+	},
+);
 const TestSkeleton = dynamic(
-	() => import("@/components/test/shadcn/test-skeleton"),
+	() => import("@/components/test-pages/shadcn/test-skeleton"),
 	{ ssr: false },
 );
 const TestSlider = dynamic(
-	() => import("@/components/test/shadcn/test-slider"),
+	() => import("@/components/test-pages/shadcn/test-slider"),
 	{ ssr: false },
 );
 const TestSonner = dynamic(
-	() => import("@/components/test/shadcn/test-sonner"),
+	() => import("@/components/test-pages/shadcn/test-sonner"),
 	{ ssr: false },
 );
 const TestSwitch = dynamic(
-	() => import("@/components/test/shadcn/test-switch"),
+	() => import("@/components/test-pages/shadcn/test-switch"),
 	{ ssr: false },
 );
-const TestTable = dynamic(() => import("@/components/test/shadcn/test-table"), {
-	ssr: false,
-});
-const TestTabs = dynamic(() => import("@/components/test/shadcn/test-tabs"), {
-	ssr: false,
-});
+const TestTable = dynamic(
+	() => import("@/components/test-pages/shadcn/test-table"),
+	{
+		ssr: false,
+	},
+);
+const TestTabs = dynamic(
+	() => import("@/components/test-pages/shadcn/test-tabs"),
+	{
+		ssr: false,
+	},
+);
 const TestTextarea = dynamic(
-	() => import("@/components/test/shadcn/test-textarea"),
+	() => import("@/components/test-pages/shadcn/test-textarea"),
 	{ ssr: false },
 );
 const TestToggle = dynamic(
-	() => import("@/components/test/shadcn/test-toggle"),
+	() => import("@/components/test-pages/shadcn/test-toggle"),
 	{ ssr: false },
 );
 const TestTooltip = dynamic(
-	() => import("@/components/test/shadcn/test-tooltip"),
+	() => import("@/components/test-pages/shadcn/test-tooltip"),
 	{ ssr: false },
 );
 
