@@ -6,7 +6,10 @@ import { IconChevronDown } from "@tabler/icons-react";
 
 import { cn } from "@/lib/utils";
 
-const Accordion = AccordionPrimitive.Root;
+// const Accordion = AccordionPrimitive.Root;
+const Accordion = React.forwardRef<
+React.ElementRef<typeof AccordionPrimitive.Root>,
+React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>>(({className,...props},ref)=><AccordionPrimitive.Root ref={ref} {...props} className={cn("bug-report", className)}/>);
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
@@ -46,7 +49,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="bug-report overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pt-0 pb-4", className)}>{children}</div>

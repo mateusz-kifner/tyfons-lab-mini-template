@@ -8,6 +8,8 @@ import useColorScheme from "@/components/ui/useColorScheme";
 
 import { LanguageContextProvider } from "@/context/i18nextContext";
 
+import "../bug-report"
+
 export default function MyApp({ Component, pageProps }: AppProps) {
 	useColorScheme();
 
